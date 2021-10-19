@@ -244,7 +244,7 @@
         ]
         function showUp(rule) {
             main.innerHTML = '';
-            for (let i = 0; i <= SY_gooodToEat_Product.length; i++) {
+            for (let i = 0; i < SY_gooodToEat_Product.length; i++) {
                 const e = SY_gooodToEat_Product[i];
                 if (e.tag1 == rule || e.tag2 == rule) {
                     // console.log(e.name)
@@ -264,9 +264,9 @@
                     <div class="price in-common">建議售價: ${e.price}</div>                              
                     </div>`
                 }
-            }
-            showUp('all')
+            }            
         }
+		showUp('all')
     </script>
 </body>
 
