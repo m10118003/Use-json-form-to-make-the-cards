@@ -1,0 +1,274 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Sunyehfy good to eat</title>
+    <style>
+        * {
+            box-sizing: border-box;
+            scroll-behavior: smooth;
+        }
+
+        body {
+            margin: 0;
+            padding: 0;
+        }
+
+        nav {
+            width: 100%;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            font-size: 140%;
+            font-weight: 800;
+        }
+
+        nav>div {
+            width: 200px;
+            height: 50px;
+            background-color: #f75a2fcb;
+            text-align: center;
+            line-height: 45px;
+            color: ghostwhite;
+            text-shadow: 0.04em 0.01em #afafaf;
+            border: 4px;
+            border-style: outset;
+            cursor: pointer;
+        }
+
+        nav>div:hover {            
+            border: #0089A7 4px outset;            
+            border-radius: 15px;
+            transition: 0.3s;
+            transition-duration: 0.5s; 
+            cursor: pointer;
+        }
+
+        nav>div:hover::before {
+            opacity: 1; 
+            transition: 0.3s;
+            transition-duration: 0.5s;           
+        }
+
+        nav>div::before {            
+            content: "";
+            width: 4vh;
+            height: 5px;
+            display: block;
+            background-color: #58B2DC;
+            text-shadow: 0.04em 0.01em #afafaf;
+            border-radius: 15px; 
+            opacity: 0;
+            position: absolute;
+            top: 3vh;
+        }
+
+        main {
+            width: 100%;
+            height: 100vh;
+            display: flex;
+            justify-content: space-evenly;
+            align-items: center;
+            flex-wrap: wrap;
+            background-color: #FEDFE1;            
+            padding: 50px 200px;
+        }
+
+        .card {
+            width: 220px;
+            height: 290px;
+            background-color: #FFBA84;
+            border: #FEDFE1 4px solid;
+            border-style: outset;
+            border-radius: 15px;            
+            margin: 0 10px 10px 10px;
+        }
+        .card:hover {            
+            text-shadow: 0.04em 0.01em #afafaf;
+            border: #58B2DC 4px solid;
+            border-style: outset;
+            border-radius: 15px;
+            transition: 0.3s;
+            transition-duration: 0.5s; 
+            cursor: pointer;
+        }
+
+        .card:hover::before {
+            opacity: 1; 
+            transition: 0.3s;
+            transition-duration: 0.5s; 
+                      
+        }
+
+        .card img {
+            width: 90%;
+            height: 160px;
+            object-fit: cover;
+            border: #FEDFE1  3px solid;
+            border-style: outset;
+            border-radius: 50%;            
+            margin: 5% 5%;
+        }
+
+        .card img:hover {
+            color: #58B2DC;
+            text-shadow: 0.04em 0.01em #afafaf;
+            border: #db2e65 4px outset;
+            border-style: outset;
+            border-radius: 15px;
+            transition: 0.3s;
+            transition-duration: 0.5s; 
+            cursor: pointer;
+        }
+
+        .card img:hover::before {
+            opacity: 1; 
+            transition: 0.3s;
+            transition-duration: 0.5s; 
+                      
+        }
+
+        .card div {
+            width: 100%;
+            padding: 0px 25px;
+        }
+
+        .card .name {
+            font-size: 100%;
+            font-weight: bold;
+        }
+
+        .in-common {
+            color: #474747;
+            font-size: 100%;
+            text-shadow: 0.04em 0.01em #afafaf;
+            
+        }
+        .in-common:hover {
+            color: #58B2DC;
+            text-shadow: 0.04em 0.01em #afafaf; 
+            border-radius: 15px;
+            transition: 0.3s;
+            transition-duration: 0.5s; 
+            cursor: pointer;
+        }
+
+        .in-common:hover::before {
+            opacity: 1; 
+            transition: 0.3s;
+            transition-duration: 0.5s; 
+                      
+        }
+
+
+
+    </style>
+</head>
+
+<body>
+    <nav>
+        <div onclick="showUp('all')">All</div>
+        <div onclick="showUp('dessert')">Snack</div>
+        <div onclick="showUp('drink')">Drink</div>
+        <div onclick="showUp('food')">Staple food</div>
+    </nav>
+    <main>
+        <!-- <div class="card">
+            <img src="https://i.epochtimes.com/assets/uploads/2014/10/1409221241502483.jpg" alt="">
+            <div class="name in-common">Premium black tea</div>
+            <div class="ingredients in-common">Ingredients: Black tea leaves, water</div>
+            <div class="price in-common">Suggested retail price: 1200</div>
+            <div class="price ex"></div> -->
+    </main>
+    </section>
+
+    <script>
+		debugger
+        
+        let main = document.querySelector('main')
+        
+        let SY_gooodToEat_Product = [
+            {
+                name: '高級紅茶',
+                img: 'https://i.epochtimes.com/assets/uploads/2014/10/1409221241502483.jpg',
+                content: '紅茶葉、水',
+                price: '1200',
+                tag1: 'drink'
+            },
+            {
+                name: '手工餅乾',
+                img: 'https://cdn2.ettoday.net/images/3629/d3629818.jpg',
+                content: '澱粉、糖',
+                price: '20',
+                tag1: 'dessert'
+            },
+            {
+                name: '珍珠奶茶',
+                img: 'https://attach.setn.com/newsimages/2018/11/06/1627152-XXL.jpg',
+                content: '奶茶、珍珠、水',
+                price: '65',
+                tag1: 'drink',
+                tag2: 'dessert'
+            },
+            {
+                name: '紅燒牛肉麵',
+                img: 'https://1.bp.blogspot.com/-4L2AeEI4x9A/XgA9c6okfMI/AAAAAAABJ-s/sXJMDKGOaY08UKCD82ioxSFQq5IC2u9PwCKgBGAsYHg/s1600/00.jpg',
+                content: '牛肉、麵條、調味料',
+                price: '180',
+                tag1: 'food'
+            },
+            {
+                name: '滷肉飯',
+                img: 'https://2.bp.blogspot.com/-VKO_fV4tzB8/WsDMatMdEQI/AAAAAAABNgc/cyaHyT2FjxY_U96pKdBcz2BMSVFPvPSPwCLcBGAs/s1600/DSC_00461.JPG',
+                content: '飯、滷肉、調味料',
+                price: '35',
+                tag1: 'food'
+            },
+            {
+                name: '蘋果派',
+                img: 'https://upload.wikimedia.org/wikipedia/commons/thumb/6/69/Motherhood_and_apple_pie.jpg/1280px-Motherhood_and_apple_pie.jpg',
+                content: '蘋果、派皮、糖',
+                price: '210',
+                tag1: 'dessert'
+            },
+            {
+                name: '多多綠茶',
+                img: 'https://www.85cafe.com/file/product/w500/%E5%A4%9A%E5%A4%9A%E7%B6%A0%E8%8C%B6.jpg',
+                content: '養樂多、糖、綠茶',
+                price: '50',
+                tag1: 'drink'
+            }
+        ]
+        function showUp(rule) {
+            main.innerHTML = '';
+            for (let i = 0; i < SY_gooodToEat_Product.length; i++) {
+                const e = SY_gooodToEat_Product[i];
+                if (e.tag1 == rule || e.tag2 == rule) {
+                    // console.log(e.name)
+                    main.innerHTML += `
+                    <div class="card">
+                    <img src="${e.img}" alt="">
+                    <div class="name in-common">${e.name}</div>
+                    <div class="ingredients in-common">成份: ${e.content}</div>
+                    <div class="price in-common">建議售價: ${e.price}</div>                              
+                    </div>`
+                } else if (rule == 'all') {
+                    main.innerHTML += `
+                    <div class="card">
+                    <img src="${e.img}" alt="">
+                    <div class="name in-common">${e.name}</div>
+                    <div class="ingredients in-common">成份: ${e.content}</div>
+                    <div class="price in-common">建議售價: ${e.price}</div>                              
+                    </div>`
+                }
+            }
+			showUp('all')
+        }
+		
+    </script>
+</body>
+
+</html>
